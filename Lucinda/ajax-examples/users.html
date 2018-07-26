@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <title>Users</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>-->
+    </head>
+    <body>
+    
+        <h1>Users</h1>
+        
+        <button type="button" id="getUsersBtn">Get Users</button>
+        
+        <ul id="usersList" class="list-group"></ul><br>
+        
+        
+        <div>
+        
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" id="firstname" class="form-control">
+            </div>           
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname" id="lastname" class="form-control">
+            </div>          
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+            
+            <button type="button" id="insertUserBtn" class="btn btn-primary">Insert User</button>
+        
+        </div>
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!--Used for things like a nav bar, etc-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        
+        <script>
+            //Using jQuery wait for the document to be ready
+            $(document).ready(function(){
+                //listen for the user clicking the 'getUsersBtn'
+                $('#getUsersBtn').click(function(){
+                    getUsers();//getUsers function below
+                });//end of #getUsersBtn click function
+                
+                //listen for the user clicking the insertUserBtn
+                $('#insertUserBtn').click(function(){
+                    insertUser();
+                });//end of #insertUserBtn click function
+                
+                
+            });//end of ready function      
+            
+            
+            
+            function getUsers(){
+                //clear current list items from usersList
+                $('#usersList').html('');
+                //make AJAX request to remote PHP page
+                    $.ajax({
+                        url:'getUsers.php',
+                        type:'get',
+                        dataType:'json', //will change to json
+                        success:function(data){ //what should happen if successful - data coming back from server
+                            //loop through the data and display each user as a list item
+                            for(var i=0; i<data.length; i++){
+                                var listItem = '<li>' + data[i].firstname + ' ' + data[i].lastname + '</li>'; // class="list-group-item" - doesn't look right
+                                $('#usersList').append(listItem);
+                            }//end of for loop
+                        },//end of success function
+                        error:function(x,s,m){ //catches any errors - object,status,message
+                            console.log(m);
+                        }//end of error function
+                    });//end of ajax
+            }//end of getUsers function
+            
+            
+            function insertUser(){
+                //create a data payload (passing data behind the scenes) to send with the ajax request
+                var userData = {
+                    firstname:$('#firstname').val(), //from the input tag using jQuery
+                    lastname:$('#lastname').val(), //from the input tag using jQuery
+                    email:$('#email').val() //from the input tag using jQuery      
+                };//end of userData object
+                //make ajax request
+                $.ajax({
+                    url:'insertUser.php',
+                    type:'post', //because 'post' is used instead of 'get' in insertUser.php
+                    dataType:'text',
+                    data:userData, //reference to the object above
+                    success:function(data){
+                        getUsers();
+                    },
+                    error:function(x,s,m){
+                        console.log(m);
+                    }
+                });//end of ajax request
+            }//end of insertUser function
+            
+            
+            
+            
+        </script>
+    
+    </body>
+
+
+
+
+</html>

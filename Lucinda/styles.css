@@ -1,0 +1,41 @@
+output{
+    background-color: darkturquoise;
+    padding: 7px;
+    margin: 10px;
+}
+
+
+.cat-links a{
+    display: inline-block;
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.cat-links a:hover{
+    background-color:cornflowerblue;
+    transition: background-color 0.5s;
+    color:white;
+}
+
+.active-cat{
+    background-color: cyan;
+}
+
+#main-footer{
+    margin-top: 20px;
+    background-color: darkgrey;
+    padding: 10px;
+    color: white;
+}
+
+
+table img{
+    width:50%;
+}
+
+
+
+
+

@@ -1,0 +1,397 @@
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2{
+    font-size: 25px;
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+}
+
+h4{
+    font-size: 15px;
+    text-align: center;
+}
+
+
+body > header,
+body > aside,
+body > section {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+aside{
+/*    display: inline-block;*/
+/*    position: relative;*/
+    margin: 0 auto;
+    height: 150px;
+}
+
+#totalDisplay{
+    text-align: center;
+/*    width: 200px;*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    top: -45px;*/
+}
+
+
+/*...............The Savings button which displays the Savings section..............*/
+#savingsImage{
+    width: 150px;
+    position: relative;
+    left: 850px;
+    top: -60px;
+/*    float: right;*/
+        margin: 0 auto;
+        display: inline-block;
+    border-radius: 30px;
+}
+
+#savingsImage:hover{
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+#savingsContent{
+    display: none;
+}
+/*..................................................................................*/
+
+
+/*...............................All Saving Trackers................................*/
+
+/*Start of Div - Top layout of Savings Form*/
+#savingsContent form{
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    border: 2px solid black;
+    padding-bottom: 10px;
+    margin: 0px 10px;
+    min-height: 302px;
+    background-color: lightgrey;
+}
+
+#savingsContent form header h3 {
+    text-align: center;
+    position: relative;
+    top: -40px;
+}
+
+#savingsContent form header h4{
+    position: relative;
+    top: -40px;
+}
+/*End of Div - Top layout of Savings Form*/
+
+
+/*Start of Div - the forms Dropdown Options*/
+.dropdownButton, .dropdownButton2, .dropdownButton3 {
+    background-color: #000;
+    color: white;
+/*    padding: 12px;*/
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 260px;
+}
+
+.dropdownButton:hover, .dropdownButton:focus,
+.dropdownButton2:hover, .dropdownButton2:focus,
+.dropdownButton3:hover, .dropdownButton3:focus{
+    background-color: #afafaf;
+}
+
+.dropdown, .dropdown2, .dropdown3 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content, .dropdown2-content, .dropdown3-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 142px;
+}
+
+.dropdown-content a, .dropdown2-content a, .dropdown3-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover, .dropdown2 a:hover, .dropdown3 a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+#changeGoal1Button, #renameSavings1Button, #deleteSavings1Button,
+#changeGoal2Button, #renameSavings2Button, #deleteSavings2Button,
+#changeGoal3Button, #renameSavings3Button, #deleteSavings3Button{
+    cursor: pointer;
+}
+/*End of Div - the forms Dropdown Options*/
+
+
+/*Start of Div - the Popups*/
+.changeGoalPopup, .renameSavings1Popup, .deleteSavings1Popup,
+.changeGoalPopup2, .renameSavings2Popup, .deleteSavings2Popup,
+.changeGoalPopup3, .renameSavings3Popup, .deleteSavings3Popup{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.changeGoalPopup-Content, .renameSavings1Popup-Content, .deleteSavings1Popup-Content,
+.changeGoalPopup2-Content, .renameSavings2Popup-Content, .deleteSavings2Popup-Content,
+.changeGoalPopup3-Content, .renameSavings3Popup-Content, .deleteSavings3Popup-Content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+}
+
+.close, .closeRenameS1, .closeDeleteS1,
+.closeS2, .closeRenameS2, .closeDeleteS2,
+.closeS3, .closeRenameS3, .closeDeleteS3{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .closeRenameS1:hover, .closeDeleteS1:hover,
+.close:focus, .closeRenameS1:focus, .closeDeleteS1:focus,
+.closeS2:hover, .closeRenameS2:hover, .closeDeleteS2:hover,
+.closeS2:focus, .closeRenameS2:focus, .closeDeleteS2:focus,
+.closeS3:hover, .closeRenameS3:hover, .closeDeleteS3:hover,
+.closeS3:focus, .closeRenameS3:focus, .closeDeleteS3:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*End of Div - the Popups*/
+
+/*................................................................................*/
+
+
+
+/*...............................Add Savings......................................*/
+
+#forDeleteS1, #forDeleteS2, #forDeleteS3{
+    text-align: center;
+    position: relative;
+/*    top: 120px;*/
+}
+
+#forDeleteS1:hover, #forDeleteS2:hover, #forDeleteS3:hover{
+    cursor: pointer;
+    color: aqua;
+}
+
+/*................................................................................*/
+
+
+/*......................All Saving Trackers Content...............................*/
+
+/*Start of Div - Radio Buttons for in or out*/
+#inorout, #inorout2, #inorout3{
+    text-align: center;
+    position: relative;
+    top: -40px;
+}
+
+#inout, #inout2, #inout3{
+    display: inline-block;
+}
+/*End of Div - Radio Buttons for in or out + submit button*/
+
+
+/*Start of Div - Input box for amount to save*/
+#savingsAmount, #savingsAmount2, #savingsAmount3{
+    text-align: center;
+    position: relative;
+    top: -20px;
+}
+
+#saveInButton, #saveOutButton,
+#saveInButton2, #saveOutButton2,
+#saveInButton3, #saveOutButton3{
+    display: none;
+}
+/*End of Div - Input box for amount to save + submit button*/
+
+
+/*Start of Div - Progress*/
+#container, #progress-bar,
+#container2, #progress-bar2,
+#container3, #progress-bar3{
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#container:hover, #container2:hover, #container3:hover{
+    box-shadow: 0px 0px 20px 1px grey;
+}
+
+#container, #container2, #container3{
+/*    text-align: center;*/
+    margin: 10px auto;
+    width:90%; 
+    height:20px;
+    border:1px solid black;
+/*    position: relative;*/
+
+}
+
+#progress-bar, #progress-bar2, #progress-bar3{
+/*    width:50%;*/
+    width: 0%;
+    max-width: 100%;
+/*    background-image:url(someImage.png);*/
+    background-color: aqua;
+    height:20px;
+/*    position: relative;*/
+}
+/*End of Div - Progress*/
+
+/*................................................................................*/
+
+
+/*..........................Savings - Total, Goal, Table..........................*/
+
+#savings1Total, #savings2Total, #savings3Total{
+    margin: 0 auto;
+    width: 100px;
+    height: 30px; 
+}
+
+#savings1Total:before, #savings2Total:before, #savings3Total:before{
+    content:'£';
+}
+
+
+#savings1Goal, #savings2Goal, #savings3Goal{
+    position: relative;
+    margin: 10px auto;
+}
+
+#savings1Table, #savings2Table, #savings3Table{
+    margin: 0 auto;
+    width: 75%;
+    display: none;
+    text-align: center;
+}
+
+#savingsContent td:nth-child(2):before, #savingsContent td:nth-child(3):before {
+    content:'£';
+}
+
+/*................................................................................*/
+
+
+
+
+
+
+/*to inject something before the data in the cell*/
+#changesTable td:nth-child(4):before, td:nth-child(5):before, #totalDisplay:before{
+    content:'£';
+}
+
+
+.right {
+    float: right;
+}
+
+
+
+/*................................................................................*/
+
+#setOutcome{
+    border: none;
+
+}
+
+#outcomeForm, #spendingForm{
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    border: 2px solid black;
+    padding-bottom: 10px;
+    margin: 0px 10px;
+}
+
+#setOutcomes h3{
+    text-align: center;
+}
+
+#setOutcomes ul{
+    list-style: none;
+}
+
+#setOutcomes input{
+/*    float: right;*/
+    width: 200px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#setOutcomeTable, #spendingTable{
+    margin: 0 auto;
+    width: 75%;
+        text-align: center;
+}
+
+
+#setOutcomeTable td:nth-child(3):before, #spendingTable td:nth-child(3):before,
+#setTotal:nth-child(3):before{
+    content:'£';
+}
+
+/*..............................................................................*/
+
+
+
+#dataStorage{
+    
+    text-align: center;
+}
+
+#changesTable{
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+/////////////////////////////////HTML PORTFOLIO PAGE////////////////////////////////////////////////   
+   <section>
+        <h1>Articles</h1>
+        <ul>
+            <li>
+                <article id="portfolio-article">
+                    <header>
+                        <h2>Article Title</h2>
+                    </header>
+                    <div class="content">
+                        <p>
+                            Introduction about me, my education, my work experience, my professional and personal projects, etc.
+                        </p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+        
+        <div>
+            <figure>
+                <img id="bannerImg">
+                <figcaption id="bannerCaption"></figcaption>
+            </figure>
+        </div>
+    </section>
+    
+    <section>
+        <h3>H3</h3>
+    </section>
+    
+////////////////////////////////////////CSS PORTFOLIO PAGE//////////////////////////////////////////    
+    
+    /*SECTION*/
+
+body > section {
+    position: sticky;
+    /*was absolute*/
+    height: auto;
+    /*    height: 450px;*/
+    /*    margin: 20px auto;*/
+    width: 100%;
+    background-color: var(--pOffWhite);
+}
+
+body > section ul {}
+
+/*Photo Banner*/
+
+body > section > div > figure {
+    position: absolute;
+}
+
+/*Article Text*/
+
+/*body > section article*/
+
+#portfolio-article {
+    padding: 10px;
+    margin: 20px 10px;
+    max-width: 350px;
+    position: relative;
+    left: 400px;
+    /*    height:auto;*/
+}
+
+/*Second Section*/
+
+body > section h3 {
+    position: relative;
+    /*was absolute*/
+    width: 100%;
+    background-color: var(--pGrey);
+}
+
+.content {
+    column-count: 1;
+
+}
+
+.content p {
+    margin-top: 0;
+}
+
+/////////////////////////////Contact - phone and email - html////////////////////////////////////
+            <p>
+                Email: <span class="right"><a href="mailto:gooding.lucinda@gmail.com" id="contactDetails">gooding.lucinda@gmail.com</a></span> <br> <br>
+                Phone: <span class="right"><a href="tel:07714643503" id="contactDetails">07714643503</a></span>
+            </p> <br>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////About - image////////////////////////////////////
+..........................HTML........................
+    <section>
+                <div id="imageMe" class="container">
+<!--                    "images/blackandwhite.jpg"-->
+                <img src="images/1.png" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div>
+<!--                        "images/colour.jpg" -->
+                        <img src="images/2.jpg" class="other">
+                    </div>
+                </div>
+            </div>
+    
+    </section>
+...........................CSS........................
+/*Section 2*/
+
+#imageMe {}
+
+.container {
+    position: relative;
+    width: 200px;
+}
+
+.image {
+    display: block;
+    width: 200px;
+    /*    height:auto;*/
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: black;
+    width: 200px;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.other {
+    white-space: nowrap;
+    color: white;
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+////////////////////////////////////////////////////////////////////
+
+
+
+@media screen
+/*and (min-width: 900px)*/
+
+    {
+    /*Body > Header : logo, name, job*/
+    body > header {
+        height: 120px;
+    }
+    body > header h1 {
+        font-size: 60px;
+        top: -30px;
+        left: 180px;
+    }
+    body > header h2 {
+        font-size: 18px;
+        top: 80px;
+        left: 200px;
+    }
+    body > header img {
+        width: 150px;
+        left: 10px;
+    }
+    /*Body > Section Nav : nav bar*/
+    body > aside nav {
+        text-align: center;
+    }
+    body > aside nav a {
+        padding: 22px;
+        width: 85px;
+        font-size: 20px;
+    }
+
+    body > section {
+        height: 400px;
+        font-size: 16px;
+    }
+    body > section h3 {
+        height: 250px;
+    }
+    /*Banner*/
+    body > section > div > figure {
+        top: 60px;
+        right: 0px;
+    }
+    body > section > div > figure img {
+        width: 280px;
+    }
+    /*Dropdown*/
+    .dropdown-content a {
+        padding: 10px 22px;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table id="employees_tbl">
+        <tr>
+            <th></th>
+        </tr>
+    </table>
+    
+        
+    
+    <script>
+
+        class Employee{
+            
+            constructor(p_fname,p_lname,p_email){
+                this.fname = p_fname;
+                this.lname = p_lname;
+                this.email = p_email;
+            }
+        }
+        
+        var emp1 = new Employee('Lucinda', 'Gooding','Lucinda.Gooding@uk.fujitsu.com');
+        var emp2 = new Employee('Hannah', 'Ainsworth', 'Hannah.Ainsworth@uk.fujitsu.com');
+        
+        var employees = new Array();
+        employees.push(emp1);
+        employees.push(emp2);
+        
+        employees.forEach(function(emp){
+            var tableRow = document.createElement('tr');
+            //First Name
+            var fnameCell = document.createElement('td');
+            fnameCell.innerHTML = emp.fname;
+            tableRow.appendChild(fnameCell);    
+            //Last Name
+            var lnameCell = document.createElement('td');
+            lnameCell.innerHTML = emp.lname;
+            tableRow.appendChild(lnameCell);     
+            //Email
+            var emailCell = document.createElement('td');
+            emailCell.innerHTML = emp.email;
+            tableRow.appendChild(emailCell);
+            
+            document.getElementById('employees_tbl').appendChild(tableRow);
+        });
+        
+        
+        
+        
+    </script>
+
+</body>
+
+</html>

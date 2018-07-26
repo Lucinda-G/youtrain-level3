@@ -1,0 +1,39 @@
+<script>
+
+
+
+    //ADD A NEW SAVINGS TRACKER//
+    var counter = 0;
+
+    //Add a new savings tracker
+    function addSavings() {
+        counter += 1;
+        if (counter == 1) {
+            console.log("1");
+            var savingsTracker1Form = document.getElementById('savingsForm1');
+            savingsTracker1Form.style.display = "block";
+        } else if (counter == 2) {
+            console.log("2");
+            //var savingsTracker2Form = document.getElementById('savingsForm2');
+            //savingsTracker2Form.style.display = "block";
+        } else if (counter == 3) {
+            console.log("3");
+            //var savingsTracker3Form = document.getElementById('savingsForm3');
+            //savingsTracker3Form.style.display = "block";
+        } else {
+            console.log("too many");
+        }
+        //            var savingsTracker1Form = document.getElementById('savingsForm1');
+        //            savingsTracker1Form.style.display = "block";
+    }
+
+
+    //THIS SHOULD BE 'REMAINING'
+    function changeSaving1Goal(answer, amount) {
+        if (answer == "saveIn") {
+            savings1GoalAmount = savings1GoalAmount - amount;
+            document.getElementById('savings1Goal').innerHTML = "Goal: £" + savings1GoalAmount.toFixed(2);
+        }
+    }
+
+</script>

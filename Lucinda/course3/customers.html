@@ -1,0 +1,115 @@
+<html>
+
+    <head>
+        
+    </head>
+
+    <body>
+        
+        <!--Create a view component to display a list of customers-->
+        
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Customer Number</th>
+                    <th>Customer Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Where the rows of data will be created-->
+            </tbody>
+        </table>
+        
+        <!--Link to the jQuery javascript code library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+        <script src="js/handlebars-v4.0.11.js"></script>
+        
+        <script>
+        
+            
+            //define a class to render into the view
+            class Renderer{
+                
+                constructor(){}
+                
+                static renderCustomers(data){
+                    //we need to create an object which has a property (customers) expected by the handlebars template (customerTemplate)
+                    var dataObj = {
+                        customers:data
+                    }
+                    
+                    //Write algorithm to fix the problem (remove '+' and html entities)
+                    for(var i = 0; i < dataObj.customers.length; i++)
+                        {
+                            var nameToFix = dataObj.customers[i].customerName;
+                            
+                            nameToFix = nameToFix.replace(/\+/g, ' ');//'g' means global so gets all '+' - regular expression
+                            
+                            nameToFix = unescape(nameToFix); //Converts the html entities such as '%'
+                            
+                            dataObj.customers[i].customerName = nameToFix; //Puts it back in
+                            
+                            //console.log(nameToFix);
+                        }
+                    
+                    var source = document.getElementById('customersTemplate').innerHTML;
+                    var template = Handlebars.compile(source); //static compile method in handlebars
+                    var html = template(dataObj);
+                    $('#customers tbody').html(html);
+                }//end renderCustomers()
+                
+            }
+            
+            
+            //define a class which will be used to communicate with the backend - NOTE this is the latest version of JavaScript (es6 - ECMAScript 6) - it will only work in the latest browsers
+            
+            class Communicator{
+               
+                constructor(){}
+                
+                //static allows you to call it without making a new instance
+                getData(dataUrl){ 
+                    //use the jQuery ajax() method to get the data from the backend asynchronously (ajax = Asynchronous JavaScript And XML)
+                    $.ajax({
+                        url:dataUrl,
+                        type:'get',
+                        dataType: 'json',//JavaScript Object Notation
+                        success:function(data){ //customer data passed here
+                            Renderer.renderCustomers(data);
+                        },
+                        error:function(xmlHttpRequest, message, status){
+                            console.log(message);
+                        }
+                    });
+                }//end of getData()
+                
+            }//end of Communicator class
+            
+            var comm = new Communicator(); //this isn't needed if 'static' is used
+            
+            comm.getData('customers.php'); //'comm' will be 'communicator' if 'static'
+        
+        
+        </script>
+        
+        <!--define a template for Handlebars-->
+        <script id="customersTemplate" type="text/x-handlebars-template">
+            <!--Handlebars syntax-->
+            {{#each customers}}
+            
+            <tr>
+                <td>{{customerNumber}}</td>
+                <td>{{customerName}}</td>
+            </tr>
+
+            {{/each}}
+        </script>
+        
+        
+    </body>
+
+
+
+
+</html>

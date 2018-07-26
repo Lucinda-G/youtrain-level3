@@ -1,0 +1,528 @@
+:root {
+    --pBlack: #2D2D2E;
+    --pOffBlack: #434348;
+    --pWhite: #ffffff;
+/*    --pOffWhite: #f5f1ff;*/
+/*    --pOffWhite: #fff;*/
+    --pOffWhite: #E1E1ED;
+    --pGrey: #88888F;
+    --pLightGrey: #B1B1BA;
+    --pPink: #DB3D51;
+
+    --pSlaboFont: 'Slabo 13px', serif;
+    --pDamionFont: 'Damion', cursive;
+    --pQuicksandFont: 'Quicksand', sans-serif;
+}
+
+/*Makes the width fit to the edge of the screen*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*Body*/
+
+/*
+body {
+    font-family: var(--pQuicksandFont);
+    color: var(--pOffBlack);
+    height: 100%;
+}
+*/
+
+/*Removes the whitespace*/
+
+body > aside nav ul,
+body > section,
+body > section h1,
+body > section h3 {
+    margin: 0px;
+}
+
+
+/*HEADER - logo, name, job*/
+
+body > header {
+    position: relative;
+    background-color: var(--pLightGrey);
+    padding: 10px;
+    height: 120px;
+    width: 100%;
+}
+
+#header-name {
+    color: var(--pBlack);
+    text-shadow: 1px 1px 4px var(--pOffBlack);
+    font-family: var(--pDamionFont);
+    position: absolute;
+    font-size: 60px;
+    left: 150px;
+}
+
+#header-title {
+    color: var(--pOffBlack);
+    font-family: var(--pSlaboFont);
+    font-style: italic;
+    position: absolute;
+    font-size: 18px;
+    top: 80px;
+    left: 170px;
+}
+
+#header-logo {
+    position: absolute;
+    width: 7em;
+    left: 10px;
+}
+
+/*Navigation bar*/
+
+#nav {
+    text-align: center;
+    background-color: var(--pOffBlack);
+}
+
+#nav a {
+    padding: 15px;
+    width: 85px;
+    font-size: 20px;
+}
+
+#nav li {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*--Individual nav buttons--*/
+
+body > aside nav a {
+    color: var(--pWhite);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: var(--pQuicksandFont);
+}
+
+
+body > aside nav a:hover {
+    /*
+    background: var(--pPink);
+    transition: background 0.4s;
+*/
+    text-decoration: none;
+    color: var(--pPink);
+    transition: background 0.4s;
+}
+
+/*--Dropdown--*/
+
+#ddMenu {
+    background-color: var(--pOffBlack);
+    border: none;
+}
+
+#ddMenu a {
+    color: var(--pWhite);
+    font-size: 20px;
+    text-align: center;
+
+}
+
+#ddMenu a:hover {
+    color: var(--pPink);
+    background-color: var(--pOffBlack);
+}
+
+/*-------------*/
+
+body > section {
+    background-color: var(--pOffWhite);
+    font-family: var(--pQuicksandFont);
+}
+
+#upBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 50px; /* Place the button at the bottom of the page */
+    right: 40px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: var(--pLightGrey); /* Set a background color */
+    color: var(--pWhite); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 20px;
+}
+
+#upBtn:hover {
+    background-color: var(--pGrey);
+}
+
+/*Footer*/
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--pLightGrey);
+    text-align: left;
+}
+
+/*------------------------------------END OF ALL PAGES-------------------------------------------*/
+
+/*................................START OF PORTFOLIO PAGE......................................*/
+
+#portfolio {
+    margin: 0 auto;
+    text-align: center;
+/*    height: 20px;*/
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+/*
+#portfolio-article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+    top: 30px;
+    text-align: center;
+}
+*/
+
+#bannerImg {
+    height: 400px;
+    width: 100%;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+#homeImage{
+    height: 400px;
+    width: 100%;
+    box-shadow: 10px 20px rgba(0, 0, 0, 1);
+}
+#demo{
+    height: 400px;
+    width: 100%;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+
+/*
+#options {
+    margin: 0 auto;
+    text-align: center;
+    height: 500px;
+    min-height: 100%;
+    padding-bottom: 30px;
+    background-color: var(--pGrey);
+}
+*/
+
+/*.................................END OF PORTFOLIO PAGE........................................*/
+
+/*---------------------------------START OF MEDIA FOR ALL---------------------------------------*/
+
+/*MEDIA - size and position only*/
+
+@media screen and (max-width: 600px) {
+    body > header {
+/*
+        position: relative;
+        background-color: var(--pLightGrey);
+        padding: 10px;
+        height: 120px;
+        width: 100%;
+*/
+    }
+
+    #header-name {
+        text-shadow: 1px 1px 4px var(--pOffBlack);
+        font-size: 30px;
+        left: 150px;
+        top: 30px;
+        
+    }
+
+    #header-title {
+        font-size: 15px;
+        top: 70px;
+        left: 170px;
+    }
+
+    #header-logo {
+        position: absolute;
+        width: 8em;
+        left: 10px;
+    }
+}
+
+
+/*---------------------------------END OF MEDIA FOR ALL--------------------------------------------*/
+
+/*..................................START OF ABOUT PAGE.....................................*/
+
+#about {
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100%;
+    padding-bottom: 70px;
+}
+
+#about-article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    min-width: 200px;
+    /*    left: 0px;*/
+    top: 30px;
+    text-align: left;
+    border: 1px solid var(--pPink);
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-family: var(--pSlaboFont);
+    color: var(--pWhite);
+    background-color: var(--pOffBlack);
+    box-shadow: 0px 0px 50px 10px var(--pGrey);
+}
+
+.response {
+    color: var(--pOffWhite);
+}
+
+#link {
+    text-decoration: none;
+    color: var(--pGrey);
+}
+
+#link:hover {
+    text-decoration: none;
+    color: var(--pPink);
+}
+
+
+
+/*...................................END OF ABOUT PAGE...........................................*/
+
+/*.................................START OF projects PAGES.......................................*/
+
+/*
+#project {
+    margin: 0 auto;
+    text-align: center;
+    height: 580px;
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+*/
+
+#project {
+    margin: 0 auto;
+    text-align: center;
+    height: 800px;
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+#project-display {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+    top: 30px;
+    text-align: center;
+}
+
+
+
+
+/*...................................END OF projects PAGES...........................................*/
+
+/*..................................START OF CV PAGE...............................................*/
+
+/*Uses Same: header, nav bar, footer*/
+
+#cv {
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+#cv-article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+    top: 30px;
+    text-align: left;
+}
+
+#downloadCV{
+    text-align: center;
+}
+
+#downloadCVBtn{
+    background-color: (var(--pOffBlack), 0.0);
+    color: var(--pOffBlack);
+    border: 2px solid var(--pPink);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+#downloadCVBtn:hover{
+    box-shadow: 0 5px 5px 0 var(--pPink);
+    cursor:pointer;
+/*    -webkit-filter: drop-shadow(4px 4px 3px rgba(219, 61, 81, 1));*/
+}
+
+#cv-article > h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.right {
+    float: right;
+}
+
+.skills {
+    border: 1px solid var(--pPink);
+    padding: 5px 18px;
+    border-radius: 8px;
+    font-size: 10px;
+    width: auto;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    float: left;
+    display: block;
+    margin-left: -95px;
+    margin-top: 5px;
+    background-color: var(--pWhite);
+    z-index: 0;
+    /*    -webkit-filter: grayscale(100%);*/
+}
+
+div.hr {
+    background: var(--pLightGrey) no-repeat scroll center;
+    width: 100%;
+    height: 2px;
+}
+
+div.hr hr {
+    display: none;
+}
+
+/*....................................END OF CV PAGE.................................................*/
+
+/*----------------------------------START OF CONTACT PAGE--------------------------------------------*/
+
+/*contact.HTML PAGE*/
+
+/*Uses Same: header, nav bar, footer*/
+
+#contact {
+    margin: 0 auto;
+    text-align: center;
+    /*    height: 480px;*/
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+#contact-article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    min-width: 250px;
+    left: 0px;
+    top: 30px;
+    text-align: left;
+}
+
+#contact-article h1 {
+    text-align: center;
+}
+
+#contact-article p {
+    text-align: left;
+}
+
+#contactDetails {
+    text-decoration: none;
+    color: var(--pOffBlack);
+    font-weight: bold;
+}
+
+#contactDetails:hover {
+    color: var(--pPink);
+}
+
+#contactSocial:hover {
+    -webkit-filter: drop-shadow(4px 4px 3px rgba(219, 61, 81, 1));
+}
+
+.right {
+    float: right;
+}
+
+#contact a {
+    text-decoration: none;
+}
+
+#socialMedia {
+    text-align: center;
+}
+
+.socialLogo {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 10px;
+    z-index: 0;
+}
+
+.contactLogo {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 40px;
+    z-index: 0;
+}
+
+/*-----------------------------------END OF CONTACT PAGE--------------------------------------------*/
+
+/*-------------------------------------START OF ZX PAGE---------------------------------------------*/
+
+#zxlogo{
+    width: 10em;
+}
+
+#zx{
+    text-decoration: none;
+    color: var(--pOffBlack);
+}
+
+#zx:hover{
+    color: var(--pPink);
+}
+
+/*--------------------------------------END OF ZX PAGE---------------------------------------------*/
+
+
+

@@ -1,0 +1,666 @@
+:root {
+    --royalPurple: #48063b;
+    --gold: #f2ac3f;
+    --black: #2D2D2E;
+    --white: #ffffff;
+    --grey: #88888F;
+    --lightGrey: #B1B1BA;
+
+    --quicksandFont: 'Quicksand', sans-serif;
+    --tangerineFont: 'Tangerine', cursive;
+}
+
+/*Makes the width fit to the edge of the screen*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Body*/
+
+/*Removes the whitespace*/
+
+body > aside nav ul,
+body > section,
+body > section h1,
+body > section h3 {
+    margin: 0px;
+}
+
+
+/*HEADER*/
+
+body > header {
+    position: relative;
+    background-color: var(--royalPurple);
+    padding: 10px;
+    height: 120px;
+    width: 100%;
+    text-align: center;
+}
+
+#header-name {
+    color: var(--gold);
+    text-shadow: 1px 1px 4px var(--black);
+    font-family: var(--tangerineFont);
+    font-size: 65px;
+    text-align: center;
+}
+
+
+/*Navigation bar*/
+
+#nav {
+    text-align: center;
+    background-color: var(--royalPurple);
+}
+
+#nav a {
+    padding: 15px;
+    width: 85px;
+    font-size: 20px;
+}
+
+#nav li {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*--Individual nav buttons--*/
+
+body > aside nav a {
+    color: var(--gold);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: var(--quicksandFont);
+}
+
+body > aside nav a:hover {
+    text-decoration: none;
+    color: var(--gold);
+    text-shadow: 0px 0px 20px var(--gold);
+    transition: background 0.4s;
+}
+
+/*--Dropdown--*/
+
+#ddMenu {
+    background-color: var(--royalPurple);
+    border: none;
+}
+
+#ddMenu a {
+    color: var(--gold);
+    font-size: 15px;
+    text-align: center;
+
+}
+
+#ddMenu a:hover {
+    color: var(--gold);
+    text-shadow: 0px 0px 20px var(--gold);
+    background-color: var(--royalPurple);
+}
+
+/*-------------*/
+
+body > section {
+    font-family: var(--quicksandFont);
+    background: #d47d8e;
+    background: -moz-linear-gradient(top, #d47d8e 0%, #601d3f 100%);
+    background: -webkit-linear-gradient(top, #d47d8e 0%, #601d3f 100%);
+    background: linear-gradient(to bottom, #d47d8e 0%, #601d3f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d47d8e', endColorstr='#601d3f', GradientType=0);
+}
+
+#upBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 50px;
+    /* Place the button at the bottom of the page */
+    right: 40px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: var(--lightGrey);
+    /* Set a background color */
+    color: var(--white);
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 20px;
+}
+
+#upBtn:hover {
+    background-color: var(--grey);
+}
+
+/*Footer*/
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--gold);
+    background-color: var(--royalPurple);
+    text-align: left;
+}
+
+/*------------------------------------END OF ALL PAGES-------------------------------------------*/
+
+/*................................START OF MAIN  PAGE......................................*/
+
+#homeImage {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+#demo {
+    width: 300px;
+    box-shadow: 0px 0px 20px var(--gold);
+    position: absolute;
+    border-radius: 20px;
+    margin: 75px;
+}
+
+#mainText {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 20px var(--gold);
+    position: absolute;
+    right: 0;
+    border-radius: 20px;
+    margin: 75px;
+    background-color: var(--royalPurple);
+}
+
+
+#mainText h1 {
+    font-size: 45px;
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    position: relative;
+    margin-top: 20px;
+}
+
+
+
+
+
+/*.................................END OF PORTFOLIO PAGE........................................*/
+
+/*---------------------------------START OF MEDIA FOR ALL---------------------------------------*/
+
+/*MEDIA - size and position only*/
+
+@media screen and (max-width: 600px) {
+    body > header {
+        /*
+        position: relative;
+        padding: 10px;
+        height: 120px;
+        width: 100%;
+*/
+    }
+
+    #header-name {
+        font-size: 30px;
+        left: 150px;
+        top: 30px;
+
+    }
+}
+
+
+/*---------------------------------END OF MEDIA FOR ALL--------------------------------------------*/
+
+/*..................................START OF ABOUT PAGE.....................................*/
+
+#pagesSections {
+    position: absolute;
+    text-align: center;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+
+#lantern,
+#lantern2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#boat {
+    margin-top: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+}
+
+#dannielleSection {
+    min-height: 50%;
+    min-width: 300px;
+    width: 300px;
+    left: 100px;
+    top: 50px;
+    position: absolute;
+    text-align: center;
+    font-family: var(--quicksandFont);
+    color: var(--gold);
+}
+
+#danImg {
+    width: 200px;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0px 0px 20px var(--gold);
+}
+
+#kyleSection {
+    min-height: 50%;
+    min-width: 300px;
+    width: 300px;
+    right: 100px;
+    top: 50px;
+    position: absolute;
+    text-align: center;
+    font-family: var(--quicksandFont);
+    color: var(--gold);
+}
+
+#kyleImg {
+    width: 200px;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0px 0px 20px var(--gold);
+}
+
+#aboutDesc {
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    font-size: 50px;
+}
+
+#sunDiv {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#sun {
+    width: 200px;
+    position: relative;
+}
+
+#countdown {
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    font-size: 90px;
+    margin-top: 50px;
+    text-shadow: 0px 0px 10px var(--black);
+}
+
+
+
+/*...................................END OF ABOUT PAGE...........................................*/
+
+/*Lanterns*/
+
+/*
+#lantern3{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    
+    width: 100px;
+    height: 100px;
+}
+
+#lantern4{
+    position: absolute;
+    top: 5px;
+    right: 130px;
+    
+    width: 100px;
+    height: 100px;
+}
+
+#lantern5{
+    position: absolute;
+    top: -20px;
+    right: 200px;
+    
+    width: 100px;
+    height: 100px;
+}
+
+#lantern6{
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    
+    width: 100px;
+    height: 100px;
+}
+
+#lantern7{
+    position: absolute;
+    top: 120px;
+    right: 240px;
+    
+    width: 100px;
+    height: 100px;    
+}
+
+#lantern8{
+    position: absolute;
+    top: 90px;
+    right: 200px;
+    
+    width: 100px;
+    height: 100px;    
+}
+
+#lantern9{
+    position: absolute;
+    top: 80px;
+    right: 140px;
+    
+    width: 100px;
+    height: 100px;    
+}
+*/
+
+/*.................................START OF wedding PAGES.......................................*/
+
+#pageTitle {
+    font-size: 60px;
+    font-weight: 200;
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+}
+
+#wedding {
+    margin: 0 auto;
+    text-align: center;
+    height: 800px;
+    min-height: 100%;
+    padding-bottom: 30px;
+}
+
+
+/*...................................END OF projects PAGES...........................................*/
+
+/*....................................START OF WEDDING PARTY PAGE.................................................*/
+
+#femaleParty {
+    /*    border: 2px solid pink;*/
+    position: absolute;
+    width: 40%;
+    height: 420px;
+    left: 0;
+}
+
+#femalePartyIndividual {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    margin: 0px 20px;
+    margin-bottom: 10px;
+}
+
+#femalePartyImg,
+#childrenPartyImg,
+#malePartyImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0px 0px 20px var(--gold);
+    display: block;
+}
+
+#femalePartyNames,
+#childrenPartyNames,
+#malePartyNames {
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    font-size: 50px;
+}
+
+
+#childrenParty {
+    /*    border: 2px solid white;*/
+    position: absolute;
+    width: 20%;
+    height: 420px;
+    left: 40%;
+}
+
+#childrenPartyIndividual {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    margin: 0px 20px;
+    margin-bottom: 10px;
+}
+
+#maleParty {
+    /*    border: 2px solid blue;*/
+    position: absolute;
+    width: 40%;
+    height: 420px;
+    right: 0;
+}
+
+#malePartyIndividual {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    margin: 0px 20px;
+    margin-bottom: 10px;
+}
+
+#femalePartyIndividual:hover .partyOverlay,
+#childrenPartyIndividual:hover .partyOverlay,
+#malePartyIndividual:hover .partyOverlay {
+    opacity: 1;
+}
+
+#party {
+    /*    border: 2px solid blue;*/
+    position: absolute;
+    width: 100%;
+    height: 420px;
+    right: 0;
+}
+
+#overlayPartyTitle {
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    font-size: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.partyOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    opacity: 0;
+    transition: .5s ease;
+    color: var(--gold);
+    background-color: var(--royalPurple);
+    box-shadow: 0px 0px 80px var(--gold);
+}
+
+
+/*....................................START OF WEDDING DETAILS PAGE.................................................*/
+
+#weddingDetailsText {
+    width: 350px;
+    height: 360px;
+    box-shadow: 0px 0px 20px var(--gold);
+    position: absolute;
+    left: 50px;
+    border-radius: 50px;
+    background-color: var(--royalPurple);
+    font-family: var(--quicksandFont);
+    color: var(--gold);
+}
+
+#venueLinks {
+    text-decoration: none;
+    color: var(--gold);
+}
+
+#venueLinks:hover {
+    text-shadow: 0px 0px 20px var(--gold);
+}
+
+
+#weddingDetailsText h1 {
+    font-size: 45px;
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    position: relative;
+    margin-top: 20px;
+}
+
+#venueSlidesContainer {
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+
+#venueSlides {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 500px;
+    box-shadow: 0px 0px 20px var(--gold);
+    border-radius: 20px;
+
+    margin-top: 25px;
+}
+
+#venueImage {
+    height: 300px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+
+#mapContainer {
+    position: absolute;
+    text-align: center;
+    right: 50px;
+}
+
+#mapSquare {
+    width: 350px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px var(--gold);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--gold);
+    box-shadow: 0px 0px 80px var(--gold);
+}
+
+#mapContainer:hover .overlay {
+    opacity: 0.5;
+}
+
+
+/*....................................START OF ORDER OF DAY PAGE.................................................*/
+
+#orderDisplay {
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+
+#orderText {
+    width: 1400px;
+    height: 400px;
+    box-shadow: 0px 0px 20px var(--gold);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: var(--royalPurple);
+    
+}
+
+#orderText h1 {
+    font-size: 45px;
+    color: var(--gold);
+    font-family: var(--tangerineFont);
+    position: relative;
+    margin-top: 20px;
+}
+
+
+/* Timeline */
+
+#timelineLine{   
+    border: 2px solid white;
+/*    position: absolute;*/
+    width: 10%;
+    height: 100%;
+    display: inline-block;  
+}
+
+
+

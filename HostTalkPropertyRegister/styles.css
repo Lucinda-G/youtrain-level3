@@ -1,0 +1,167 @@
+:root{
+    --NunitoFont: 'Nunito', sans-serif;
+    
+    --colourWhite: #ffffff;
+    --colourFujitsuRed: #e7080a;
+    --colourDarkRed: #ba1f20;
+    --colourLightGrey: #f1f1f1; 
+}
+
+/*----------------------------------BODY-----------------------------------*/
+
+body{
+    font-family: var(--NunitoFont);
+}
+
+/*---------------------ALLOCATED/DEALLOCATED BUTTONS-----------------------*/
+
+.cat-links a{
+    display: inline-block;
+    align-content: center;
+    width: 150px;
+    border: 1px solid var(--colourFujitsuRed);
+    border-radius: 5px;
+    margin: 0 10px 0 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.cat-links a:hover{
+    background-color: var(--colourDarkRed);
+    transition: background-color 0.5s;
+    color: var(--colourWhite);
+}
+
+#active-cat{
+    background-color: var(--colourFujitsuRed);
+    color: var(--colourWhite);
+}
+
+.right {
+    float: right;
+}
+
+
+/*-----------------------------------HEADER-------------------------------------*/
+
+#header{
+    margin: 10px 0;
+}
+
+h1{
+    font-family: monotype;
+    color: var(--colourFujitsuRed);
+}
+
+#logo{
+    width: 10em;
+}
+
+h2{
+    
+}
+
+/*--------------------------------BUTTONS------------------------------------*/
+
+.button{
+    background-color: var(--colourFujitsuRed);
+    color: var(--colourWhite);
+}
+
+.button:hover{
+    background-color: var(--colourDarkRed);
+    cursor: pointer;
+}
+
+/*-------------------------------EDIT LINKS-----------------------------------*/
+
+.editLink{
+    color: var(--colourFujitsuRed);
+}
+
+.editLink:hover{
+    color: var(--colourDarkRed);;
+    text-decoration: none;
+}
+
+
+/*---------------------------------FOOTER-------------------------------------*/
+
+#footer {
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--colourWhite);
+    text-align: right;
+}
+
+
+
+/*-------------------------------------TABLE------------------------------------*/
+
+.scroll {
+  border: 0;
+  border-collapse: collapse;
+}
+
+.scroll tr {
+  display: flex;
+}
+
+.scroll td {
+  flex: 1 auto;
+  width: 0px;
+  word-wrap:break-word;
+}
+
+.scroll thead tr:after {
+  content: '';
+  overflow-y: scroll;
+  visibility: hidden;
+  height: 0;
+
+}
+
+.scroll thead th {
+    flex: 1 auto;
+    width: 12%;
+}
+
+.scroll tbody {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+  height: 490px;
+
+}
+
+/*
+thead{
+    display:table-header-group;
+}
+*/
+
+
+
+/*-----------------------------SCROLLBAR APPEARANCE----------------------------*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--colourLightGrey);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--colourFujitsuRed);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--colourDarkRed);
+}
